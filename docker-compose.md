@@ -1,61 +1,61 @@
-Docker Compose is indeed a valuable tool for managing multi-container applications. It simplifies the process of defining, running, and managing containerized applications. Here's a bit more detail about the contexts in which Docker Compose is used:
+# Docker Compose
 
-Docker Compose Uses:
-Local Development
+Docker Compose is a valuable tool for managing multi-container applications. It simplifies the process of defining, running, and managing containerized applications.
 
-Benefit: Rapid local development.
+## Docker Compose Uses
 
-Use Case: DevOps engineers write Docker Compose YAML files and share them with developers. Developers can then easily run the application without memorizing complex commands. Just docker-compose up to start the services and docker-compose down to stop them.
+### Local Development
 
-Continuous Integration and Continuous Deployment (CI/CD)
+- **Benefit**: Rapid local development.
+- **Use Case**: DevOps engineers write Docker Compose YAML files and share them with developers. Developers can then easily run the application without memorizing complex commands. Just `docker-compose up`.
 
-Benefit: Streamlined CI/CD pipelines.
+### Continuous Integration and Continuous Deployment (CI/CD)
 
-Use Case: For each pull request, you can set up a virtual machine (VM) and install Docker. Your CI/CD pipeline can then run commands like docker-compose up and docker-compose down to validate changes effectively.
+- **Benefit**: Streamlined CI/CD pipelines.
+- **Use Case**: For each pull request, you can set up a virtual machine (VM) and install Docker. Your CI/CD pipeline can then run commands like `docker-compose up` and `docker-compose down` to validate changes.
 
-Testing
+### Testing
 
-Benefit: Efficient and consistent testing environments.
+- **Benefit**: Efficient and consistent testing environments.
+- **Use Case**: Create isolated testing environments where the application's various services can be tested together, ensuring compatibility and performance across all integrated services.
 
-Use Case: Create isolated testing environments where the application's various services can be tested together, ensuring compatibility and performance across all integrated services.
+## Docker Swarm vs. Kubernetes
 
-Docker Swarm vs. Kubernetes
-Docker Swarm: It's Docker's native clustering and orchestration tool, designed for simpler, smaller-scale deployments.
+- **Docker Swarm**: Docker's native clustering and orchestration tool, designed for simpler, smaller-scale deployments.
+- **Kubernetes**: A more comprehensive orchestration system, ideal for complex, large-scale container deployments.
 
-Kubernetes: A more comprehensive orchestration system, ideal for complex, large-scale container deployments.
+While Docker Swarm is a good entry point for simpler clustering, Kubernetes offers a broader set of features and is often considered more robust for larger production environments.
 
-While Docker Swarm is a good entry point for simpler clustering, Kubernetes offers a broader set of features and is often considered more robust for larger production environments. The two can serve similar purposes, but their complexity and use cases differ.
+## Basic Docker Compose Commands
 
-Some basic docker compose commands.
+- `docker-compose up`: Start all the services defined in your `docker-compose.yml` file.
+- `docker-compose up -d`: Run the containers in the background.
+- `docker-compose down`: Stop and remove all the containers, networks, and volumes defined in your `docker-compose.yml`.
+- `docker-compose logs`: Show the logs from the running containers.
+- `docker-compose logs -f`: Follow the logs in real-time.
+- `docker-compose build`: Build the images defined in the `docker-compose.yml` file. If you make changes to the Dockerfiles, run this command to rebuild the images.
+- `docker-compose up --scale <service_name>=<number_of_instances>`
+- `docker-compose ps`: Show the status of all the containers managed by Docker Compose.
+- `docker-compose stop`: Stop the services but don't remove the containers.
+- `docker-compose --version`: View the current version of Docker Compose.
+- `docker-compose stop <service_name>`: Stop a specific service without affecting others.
 
-docker-compose up # This will start all the services defined in your docker-compose.yml file
-docker-compose up -d # You can add the -d flag to run the containers in the background .
-docker-compose down # This stops and removes all the containers, networks, and volumes defined in your docker-compose.yml.
-docker-compose logs
-docker-compose logs -f # This shows the logs from the running containers. You can add the -f flag to follow the logs in real-time .
-docker-compose build # This command builds the images defined in the docker-compose.yml file. If you make changes to the Dockerfiles, run this command to rebuild the images.
-docker-compose up --scale <service_name>=<number_of_instances>
-docker-compose ps   # This shows the status of all the containers managed by Docker Compose.
-docker-compose stop # This stops the services but doesn't remove the containers.
-docker-compose --version  # To view the current version of Docker Compose.
-docker-compose stop <service_name> # This stops a specific service without affecting others.
+## Reference Documentation
 
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
+- [Awesome Compose](https://github.com/docker/awesome-compose) - For practice with Docker Compose.
 
-Refrence Documentation .
-    https://docs.docker.com/compose/ 
-    https://github.com/docker/awesome-compose  # For practice docker compose.
+## Implemented Project: Robot-Shop
 
-
-Implemented following project i.e. robot-shop
-
--- https://github.com/khannashiv/robot-shop
--- AWS EC2 Instance taken : Ubuntu + t2.medium + 15 GB Disk / EBS volume .
--- Sudo apt-get update && apt-get install docker-compose
--- git clone <repo-url>
--- navigate to directory where we have docker compose yaml file .
--- To run the project locally.
-    -- docker-compose pull
-    -- docker-compose up   or docker-compose up -d 
-    -- docker-compsoe down
-    -- Verified : docker ps as well as docker images .
--- Finally we are able to do : http://localhost:8080 as well as on http://<Public-IP-of-EC2>:8080/
+- [Robot-Shop GitHub Repository](https://github.com/khannashiv/robot-shop)
+- **AWS EC2 Instance**: Ubuntu + t2.medium + 15 GB Disk / EBS volume.
+- **Setup Commands**:
+  - `sudo apt-get update && apt-get install docker-compose`
+  - `git clone <repo-url>`
+  - Navigate to the directory where the Docker Compose YAML file is located.
+  - To run the project locally:
+    - `docker-compose pull`
+    - `docker-compose up` or `docker-compose up -d`
+    - `docker-compose down`
+  - Verify with `docker ps` and `docker images`.
+  - Access the application at `http://localhost:8080` or `http://<Public-IP-of-EC2>:8080/`.
