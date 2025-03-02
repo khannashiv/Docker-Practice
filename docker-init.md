@@ -12,3 +12,6 @@ The `docker init` command is available in Docker Desktop starting from version 4
 - [Docker Init Documentation](https://docs.docker.com/reference/cli/docker/init/)
 - [Install Docker Desktop on Ubuntu](https://docs.docker.com/desktop/setup/install/linux/ubuntu/)
 - [Install Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+
+Snap
+![image](https://github.com/user-attachments/assets/e7a0062d-e723-4c79-bcdb-8795f735dedd)
