@@ -14,11 +14,10 @@ docker login
 docker images
 docker ps or docker ps -a
 docker build -t khannashiv/my-django-app .
-docker run -d 887a44fb3947 /bin/bash
-docker run -it 887a44fb3947 /bin/bash
-docker run -dit -p 8000:8000 3e37e9bc3862
+docker run -it <image-name | image-id> /bin/bash
+docker run -dit -p 8000:8000 <image-name | image-id>
+docker run -e MY_ENV_VAR=value -d <image-name>                          # You can set environment variables using the -e flag.
 docker push khannashiv/docker-image-without-multi-stage:latest
-
 
 ######### Docker Volumes & Bind Mount  || Networking . #############
 
@@ -28,6 +27,7 @@ Commands on docker volumes and networking.
  -- docker volume create <vol-name>
  -- docker volume inspect <vol-name>
  -- docker volume rm <vol-name>
+ -- docker run -v /host/path:/container/path -d <image-name>
  -- In order to delete the docker volume >> Make sure it should not be attached with container >> If volume is attached to the container in that case you have to stop the container >> Later you will able to delete the volume .
  -- docker network ls
  -- docker network create <network-name>
