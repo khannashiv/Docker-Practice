@@ -14,4 +14,5 @@ The `docker init` command is available in Docker Desktop starting from version 4
 - [Install Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 Snap
+
 ![image](https://github.com/user-attachments/assets/e7a0062d-e723-4c79-bcdb-8795f735dedd)
