@@ -70,7 +70,7 @@ docker rm -f $(docker ps -aq)                    # Remove all containers
         #         List all containers (both running and stopped) using docker ps -aq.
         #         Pass all those container IDs to docker rm -f, which will forcefully remove each one
 
-# Miscellaneous
+##### Miscellaneous commands on docker .
 
 # Run container with environment variable
 docker run -e MY_ENV_VAR=value -d <image-name> 
