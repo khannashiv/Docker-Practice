@@ -72,4 +72,14 @@ docker rm -f $(docker ps -aq)                    # Remove all containers
 
 # Miscellaneous
 
-docker run -e MY_ENV_VAR=value -d <image-name>   # Run container with environment variable
+# Run container with environment variable
+docker run -e MY_ENV_VAR=value -d <image-name> 
+
+# To execute a shell script from your host machine on a Docker container
+docker cp /path/to/script.sh CONTAINER_NAME:/path/in/container/script.sh
+docker exec -it CONTAINER_NAME bash /path/in/container/script.sh
+
+# If my script is small and we don't need to copy it, we can simply execute it using docker exec with an inline script .
+docker exec -it CONTAINER_NAME bash -c "echo 'Your shell script commands here' > /root/myscript.sh && bash /root/myscript.sh"
+
+
