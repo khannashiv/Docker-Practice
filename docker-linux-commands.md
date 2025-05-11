@@ -65,6 +65,7 @@ docker network inspect <network-name> | grep IP  # Get network IP
 docker run -dit --name finance --network=secure-network ubuntu # Run container with custom network
 docker run -dit --name=host-demo --network=host ubuntu # Run container with host network
 docker rm -f $(docker ps -aq)                    # Remove all containers
+docker rmi $(docker images -q)                   # Remove docker images
 
         # This command i.e. on line # 67 will:
         #         List all containers (both running and stopped) using docker ps -aq.
