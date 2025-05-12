@@ -126,4 +126,4 @@ I'm working on multi-arch-demo
 
 - [Docker Buildx CLI Reference](https://docs.docker.com/reference/cli/docker/buildx/)
 
-This guide shows how to build Docker images for multiple architectures and run them on different processors (AMD and ARM). Happy Dockering!
+This guide shows how to build Docker images for multiple architectures and run them on different processors (AMD and ARM).
