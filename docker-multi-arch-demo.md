@@ -54,11 +54,10 @@ CMD ["echo", "I'm working on multi-arch-demo"]
    sudo docker buildx create --name multiarch --platform linux/amd64,linux/arm64 --driver docker-container --bootstrap --use
    ```
 
-- ![](images/Docker-multi-arch-2 "Docker-multi-arch-2")
-- ![](images/Docker-multi-arch-3 "Docker-multi-arch-3")
-- ![](images/Docker-multi-arch-4 "Docker-multi-arch-4")
-- ![](images/Docker-multi-arch-1 "Docker-multi-arch-1")   
-
+- ![](images/Docker-multi-arch-2.png "Docker-multi-arch-2")
+- ![](images/Docker-multi-arch-3.png "Docker-multi-arch-3")
+- ![](images/Docker-multi-arch-4.png "Docker-multi-arch-4")
+- ![](images/Docker-multi-arch-1.png "Docker-multi-arch-1")   
 
 ## Machine 2: Steps for ARM Processor
 
@@ -116,9 +115,11 @@ sudo docker run khannashiv/multiarchdemo:v2
 ```
 I'm working on multi-arch-demo
 ```
-- ![](images/Docker-multi-arch-5 "Docker-multi-arch-5")
-- ![](images/Docker-multi-arch-6 "Docker-multi-arch-6")
-- ![](images/Docker-multi-arch-7 "Docker-multi-arch-7")   
+
+- ![](images/Docker-multi-arch-5.png "Docker-multi-arch-5")
+- ![](images/Docker-multi-arch-6.png "Docker-multi-arch-6")
+- ![](images/Docker-multi-arch-7.png "Docker-multi-arch-7")
+
 ---
 
 ## Notes and Troubleshooting
