@@ -54,8 +54,6 @@ CMD ["echo", "I'm working on multi-arch-demo"]
    sudo docker buildx create --name multiarch --platform linux/amd64,linux/arm64 --driver docker-container --bootstrap --use
    ```
 
----
-
 - ![](images/Docker-multi-arch-2 "Docker-multi-arch-2")
 - ![](images/Docker-multi-arch-3 "Docker-multi-arch-3")
 - ![](images/Docker-multi-arch-4 "Docker-multi-arch-4")
