@@ -13,11 +13,10 @@ There are two branches in the project:
 🔗 Reference : GitHub Repo - MERN Docker Compose : https://github.com/iam-veeramalla/MERN-docker-compose/tree/main 
 
 - **Role of Each Component**
-
- - MongoDB: Stores application data. It's the database used by the backend.
- - Express.js: Backend web application framework where business logic resides.
- - Node.js: Executes the Express.js application and serves API endpoints.
- - React.js: The frontend that interacts with users and consumes APIs from the backend.
+    - MongoDB: Stores application data. It's the database used by the backend.
+    - Express.js: Backend web application framework where business logic resides.
+    - Node.js: Executes the Express.js application and serves API endpoints.
+    - React.js: The frontend that interacts with users and consumes APIs from the backend.
 
 - **General Analogy: Language vs. Dependency File**
 
@@ -33,28 +32,27 @@ There are two branches in the project:
 
 
 - **Dockerization Workflow**
-
-- Create a Dockerfile for both the frontend and backend.
-- Set up a custom Docker network so that all three containers can talk to each other.
-- Run all Docker commands manually to test individual services.
-- Once confirmed, migrate to a single file: docker-compose.yaml.
+    - Create a Dockerfile for both the frontend and backend.
+    - Set up a custom Docker network so that all three containers can talk to each other.
+    - Run all Docker commands manually to test individual services.
+    - Once confirmed, migrate to a single file: docker-compose.yaml.
 
 - **Docker Compose simplifies**
 
-- Multi-container orchestration
-<!--
-Ques   :   What is Multi-Container Orchestration?
-Sol    : 
-Multi-container orchestration refers to the coordinated setup, deployment, and management of multiple containers that work together as part of an application. For example, a typical MERN app may have:
-    -- A MongoDB container (database)
-    -- A Node/Express container (backend)
-    -- A React container (frontend)
-    -- All of these need to run together, communicate over a network, and may depend on each other in a specific order (e.g., backend depends on database).
+    - Multi-container orchestration
+    <!--
+    Ques   :   What is Multi-Container Orchestration?
+    Sol    : 
+    Multi-container orchestration refers to the coordinated setup, deployment, and management of multiple containers that work together as part of an application. For example, a typical MERN app may have:
+        -- A MongoDB container (database)
+        -- A Node/Express container (backend)
+        -- A React container (frontend)
+        -- All of these need to run together, communicate over a network, and may depend on each other in a specific order (e.g., backend depends on database).
 
--->
-- Network configuration
-- Volume management
-- Dependency ordering (e.g., DB before backend)
+    -->
+    - Network configuration
+    - Volume management
+    - Dependency ordering (e.g., DB before backend)
 
 - **Docker Compose allows us to do following tasks**
 
@@ -69,11 +67,10 @@ Multi-container orchestration refers to the coordinated setup, deployment, and m
 
 
 - **Important Notes**
-
-- Firstly we have confgured, frontend container.
-- Then we configure and start the MongoDB container first, before one tries to configure backend container since backend container tries to connect the database/mongodb container via connection string on startup.
-- Make sure containers are on the same Docker network for hostname-based resolution.
-- Use Docker volumes to persist MongoDB data.
+    - Firstly we have confgured, frontend container.
+    - Then we configure and start the MongoDB container first, before one tries to configure backend container since backend container tries to connect the database/mongodb container via connection string on startup.
+    - Make sure containers are on the same Docker network for hostname-based resolution.
+    - Use Docker volumes to persist MongoDB data.
 
 #### Docker Commands for Manual Testing
 
