@@ -78,9 +78,9 @@ Multi-container orchestration refers to the coordinated setup, deployment, and m
 #### Docker Commands for Manual Testing
 
  - **List commands**
-  - docker network ls
-  - docker images
-  - docker volume ls
+    - docker network ls
+    - docker images
+    - docker volume ls
 
 - **Docker build commands**
  - docker build -t khannashiv/mern-frontend:v1 ./frontend
