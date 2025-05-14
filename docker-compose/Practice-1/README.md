@@ -107,6 +107,8 @@ There are two branches in the project:
 
 - Once we have confirmed everything worked locally, we have stop all containers, followed by deleting them and also we have deleted their correspoding docker images.
 - Next we have created a compose.yml file which will container all the services i.e. frontend, backend as well as db conatiners all in single YAML file.
+- Go to the server where you would like to deploy container via compose file >> clone the github repository >> Navigate to the path where your compose.yaml or docker-compose.yaml exists >> From there execute command i.e. docker-compose up -d >> This will deploy all my docker images as well as container as per the instructions specified inside YAML file.
+
 - Final outcomes of the project has been attached below in the form of snaps.
 
 - ![](../../images/Docker-compose-mern-1.png "Docker-compose-mern-1")
