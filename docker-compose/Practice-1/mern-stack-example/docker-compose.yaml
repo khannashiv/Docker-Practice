@@ -1,0 +1,33 @@
+services:
+  backend:
+    build: ./docker-compose/Practice-1/mern-stack-example/backend
+    ports:
+      - "5050:5050" 
+    networks:
+      - mern-app-network
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./docker-compose/Practice-1/mern-stack-example/frontend
+    ports:
+      - "5173:5173"  
+    networks:
+      - mern-app-network
+
+  mongodb:
+    image: mongo:8.0  
+    ports:
+      - "27017:27017"  
+    networks:
+      - mern-app-network
+    volumes:
+      - mongo-data:/data/db 
+
+networks:
+  mern_network:
+    driver: mern-app-network
+
+volumes:
+  mongo-data:
+    driver: local  # Persist MongoDB data locally on the host machine.
