@@ -1,6 +1,6 @@
 services:
   backend:
-    build: ./docker-compose/Practice-1/mern-stack-example/backend
+    build: ./backend
     ports:
       - "5050:5050" 
     networks:
@@ -9,7 +9,7 @@ services:
       - mongodb
 
   frontend:
-    build: ./docker-compose/Practice-1/mern-stack-example/frontend
+    build: ./frontend
     ports:
       - "5173:5173"  
     networks:
