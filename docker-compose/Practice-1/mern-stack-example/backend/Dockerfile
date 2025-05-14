@@ -3,10 +3,10 @@
 FROM node:20
 
 # Set the working directory in the container to /app
-WORKDIR /app/
+WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY package.json /app/
+COPY package.json .
 
 # RUN installs all the dependencies your Node.js app needs inside the Docker image so that the container can run your app properly.
 RUN npm install
