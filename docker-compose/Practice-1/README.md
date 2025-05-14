@@ -88,4 +88,12 @@ There are two branches in the project:
 - Final outcomes of the project has been attached below in the form of snaps.
 
 - ![](../../images/Docker-compose-mern-1.png "Docker-compose-mern-1")
+- ![](../../images/Docker-compose-mern-2.png "Docker-compose-mern-2")
+- ![](../../images/Docker-compose-mern-3.png "Docker-compose-mern-3")
+- ![](../../images/Docker-compose-mern-4.png "Docker-compose-mern-4")
+- ![](../../images/Docker-compose-mern-5.png "Docker-compose-mern-5")
+- ![](../../images/Docker-compose-mern-6.png "Docker-compose-mern-6")
+- ![](../../images/Docker-compose-mern-7.png "Docker-compose-mern-7")
+- ![](../../images/Docker-compose-mern-8.png "Docker-compose-mern-8")
+- ![](../../images/Docker-compose-mern-9.png "Docker-compose-mern-9")
 
