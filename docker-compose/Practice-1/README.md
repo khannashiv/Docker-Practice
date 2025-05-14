@@ -1,11 +1,10 @@
 ## MERN stack application implementation.
 
 - Project Overview : This project uses the MERN stack, which stands for:
-
-    M: MongoDB (Database Layer)
-    E: Express.js (Application Logic Layer)
-    R: React.js (Frontend/UI Layer)
-    N: Node.js (Runtime Environment for Backend)
+    - M: MongoDB (Database Layer)
+    - E: Express.js (Application Logic Layer)
+    - R: React.js (Frontend/UI Layer)
+    - N: Node.js (Runtime Environment for Backend)
 
 There are two branches in the project:
  - main branch: Provided by the developers, contains the original source code.
@@ -20,28 +19,54 @@ There are two branches in the project:
  - Node.js: Executes the Express.js application and serves API endpoints.
  - React.js: The frontend that interacts with users and consumes APIs from the backend.
 
-**General Interpretation.**
+**General Analogy: Language vs. Dependency File**
 
-| Language | Dependency File    |
-| -------- | ------------------ |
-| Python   | `requirements.txt` |
-| Java     | `pom.xml`          |
-| Node.js  | `package.json`     |
-| Go       | `go.mod`           |
+| **Language** | **Dependency File** | **Purpose**                                                           |
+| ------------ | ------------------- | --------------------------------------------------------------------- |
+| Python       | `requirements.txt`  | Lists third-party Python packages to be installed via `pip`.          |
+| Java         | `pom.xml`           | Maven configuration file; manages dependencies, build plugins, etc.   |
+| Node.js      | `package.json`      | Lists dependencies, scripts, project metadata for npm-based projects. |
+| Go           | `go.mod`            | Specifies Go module and its required dependencies (since Go 1.11+).   |
+| Rust         | `Cargo.toml`        | Declares Rust project metadata and dependencies (used with Cargo).    |
+| Ruby         | `Gemfile`           | Declares Ruby gem dependencies for Bundler.                           |
+| PHP          | `composer.json`     | Defines PHP package dependencies for Composer.                        |
+
 
 **Dockerization Workflow**
 
 - Create a Dockerfile for both the frontend and backend.
-- Set up a custom Docker network so containers can talk to each other.
+- Set up a custom Docker network so that all three containers can talk to each other.
 - Run all Docker commands manually to test individual services.
 - Once confirmed, migrate to a single file: docker-compose.yaml.
 
 **Docker Compose simplifies**
 
 - Multi-container orchestration
+<!--
+Ques   :   What is Multi-Container Orchestration?
+Sol    : 
+Multi-container orchestration refers to the coordinated setup, deployment, and management of multiple containers that work together as part of an application. For example, a typical MERN app may have:
+    -- A MongoDB container (database)
+    -- A Node/Express container (backend)
+    -- A React container (frontend)
+    -- All of these need to run together, communicate over a network, and may depend on each other in a specific order (e.g., backend depends on database).
+
+-->
 - Network configuration
 - Volume management
 - Dependency ordering (e.g., DB before backend)
+
+**Docker Compose allows us to do following tasks**
+
+| Feature                     | Description                                                            |
+| --------------------------- | ---------------------------------------------------------------------- |
+| Define multi-container apps | In a single `docker-compose.yml` file                                  |
+| Shared networking           | Containers can communicate by **service name** (e.g., `mongodb:27017`) |
+| Define dependencies         | With `depends_on`, you can specify startup order                       |
+| Environment configuration   | Using `.env` files or `environment:` section                           |
+| Volume and port mapping     | Easily map host paths, persistent volumes, and ports                   |
+| Lifecycle commands          | `docker-compose up`, `down`, `logs`, etc., for managing the full app   |
+
 
 **Important Notes**
 
