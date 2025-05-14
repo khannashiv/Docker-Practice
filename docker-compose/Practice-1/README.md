@@ -83,30 +83,30 @@ Multi-container orchestration refers to the coordinated setup, deployment, and m
     - docker volume ls
 
 - **Docker build commands**
- - docker build -t khannashiv/mern-frontend:v1 ./frontend
- - docker build -t khannashiv/mern-backend:v1 ./backend
+  - docker build -t khannashiv/mern-frontend:v1 ./frontend
+  - docker build -t khannashiv/mern-backend:v1 ./backend
 
 - **Docker create commands**
- - docker network create mern-app-network
+  - docker network create mern-app-network
 
 - **Docker run commands**
- - docker run -dit --name=mongodb --network=mern-app-network -v /opt/mongo-db-data/:/opt/data -p 27017:27017 mongo:8.0
- - docker run -dit --name=mern-stack-backend --network=mern-app-network -p 5050:5050 khannashiv/mern-backend:v1
- - docker run -dit --name=mern-stack-frontend --network=mern-app-network -p 5173:5173 khannashiv/mern-frontend:v1
+  - docker run -dit --name=mongodb --network=mern-app-network -v /opt/mongo-db-data/:/opt/data -p 27017:27017 mongo:8.0
+  - docker run -dit --name=mern-stack-backend --network=mern-app-network -p 5050:5050 khannashiv/mern-backend:v1
+  - docker run -dit --name=mern-stack-frontend --network=mern-app-network -p 5173:5173 khannashiv/mern-frontend:v1
 
 - **Docker container logs**
- - docker logs mongodb
- - docker logs mern-stack-backend
- - docker logs mern-stack-frontend
+  - docker logs mongodb
+  - docker logs mern-stack-backend
+  - docker logs mern-stack-frontend
 
 - **Docker exec commands**
- - docker exec -it mongodb /bin/bash
- - docker exec -it mern-stack-backend /bin/bash
- - docker exec -it mern-stack-frontend /bin/bash
+  - docker exec -it mongodb /bin/bash
+  - docker exec -it mern-stack-backend /bin/bash
+  - docker exec -it mern-stack-frontend /bin/bash
 
 - **Docker rm commands**
- - docker rm -f $(docker ps -aq)
- - docker rmi -f $(docker images -aq)
+  - docker rm -f $(docker ps -aq)
+  - docker rmi -f $(docker images -aq)
 
 - Once we have confirmed everything worked locally, we have stop all containers, followed by deleting them and also we have deleted their correspoding docker images.
 - Next we have created a compose.yml file which will container all the services i.e. frontend, backend as well as db conatiners all in single YAML file.
